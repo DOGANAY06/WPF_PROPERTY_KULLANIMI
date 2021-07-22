@@ -1,0 +1,25 @@
+﻿<Window x:Class="ListBoxVeritabanı.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListBoxVeritabanı"
+        mc:Ignorable="d"
+        Title="ListBox İle Veritabanı Uygulaması" Height="450" Width="800">
+    <Grid>
+        <ListBox Margin="12,10,10,51" ItemsSource="{Binding Path=ContactType}" Name="lstContact">
+            <ListBox.ItemTemplate>
+                <!--kayıtların bizim istediğimiz gibi görünmesi için template oluşturuyoruz-->
+                <DataTemplate>
+                    <DockPanel>
+                        <TextBlock Text="{Binding Path=ContactTypeID}"/>
+                        <TextBlock Text=" :" />
+                        <TextBlock Text="{Binding Path=Name}"/>
+                        <!--veritabanında aranacak yerler textblock koyacağız-->
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+</Window>
